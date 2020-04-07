@@ -12,7 +12,7 @@ RUN dotnet publish -c Release -o out docker-locale-test.csproj
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false DOTNET_ENVIRONMENT=Development TZ=Europe/Berlin LANG=de_DE.UTF-8
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false DOTNET_ENVIRONMENT=Development TZ=Europe/Berlin LANG=en_EN.UTF-8
 
 ENTRYPOINT ["dotnet", "docker-locale-test.dll"]
 
